@@ -1,0 +1,11 @@
+= Ninokin Naming Standard
+
+== Overview
+
+The _Naming Standard_ defines required and recommended practices for naming a variety of software development artifacts, including source files, header files, packages, repositories, etc.
+
+The naming of things seems like a trivial pursuit, but nothing in software development is more difficult or contentious.
+
+== Scope
+
+This coding standard applies any software development in ninokin project.

@@ -1,0 +1,53 @@
+= Policy
+
+== Overview
+
+In terms of software development, there are so many skills required for development that it is impossible to count them all.
+This document will introduce you to the skills essential to developing software today.
+
+== Get started
+
+T.B.D.
+
+=== Languages
+
+* C and C++
+* Bash
+* Java
+* JavaScript
+* Python
+
+=== SCM
+
+* git
+* GitHub
+** GitHub Actions
+
+=== Build Configuration
+
+* Bazel
+
+=== Test
+
+* Google Test
+* pytest
+
+=== Documentation
+
+* MkDocs
+* Antora
+
+=== Linter
+
+* markdownlint
+* yamllint
+
+=== Work Tracking
+
+* Jira
+
+=== Wiki
+
+* Confluence
+
+== Reference

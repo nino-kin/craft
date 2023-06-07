@@ -1,0 +1,13 @@
+name: glossary
+titile: Glossary
+version: '0.1'
+nav:
+  - modules/ROOT/nav.adoc
+aciidoc:
+  attributes:
+    description: Glossary of terms for Ninokin development
+    url-repo: https://github.com/nino-kin/craft
+    revdate: May 22, 2023
+    revnumber: 0.1.0
+    listing-caption: Listing@
+    sect: §

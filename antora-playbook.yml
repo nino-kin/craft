@@ -1,0 +1,33 @@
+site:
+  title: Ninokin Docs
+  start_page: ninokin-policy::index.adoc
+
+content:
+  sources:
+  - url: ./
+    branches: HEAD
+    edit_url: 'https://github.com/nino-kin/craft/edit{refname}/{path}'
+    start_paths:
+      - .
+      - glossary
+      - naming
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+
+asciidoc:
+  sourcemap: true
+  attributes:
+    sectanchors: ''
+
+output:
+  dir: ./site
+
+runtime:
+  cache_dir: .cache/antora
+  fetch: true
+  log:
+    format: pretty
+    failure_level: warn
+    level: all

@@ -1,0 +1,15 @@
+name: ninokin-policy
+title: Software Development Policy
+version: '0.1'
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    codeql-autosar-rules: https://github.com/github/codeql-coding-standards/tree/main/cpp/autosar/test/rules[C++ AUTOSAR test rules]
+    cppdrafts: https://eel.is/c++draft/
+    description: Coding guidelines policy description
+    listing-caption: Listing@
+    revdate : May 20, 2023@
+    sect: §
+

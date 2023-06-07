@@ -1,0 +1,14 @@
+name: naming
+title: Naming Standard
+version: '0.1'
+nav:
+  - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    description: Naming standards for things with names
+    url-repo: Https://github.com/nino-kin/craft
+    doc-id: NINOKIN-STD-0001
+    revdate: May 17, 2023
+    revnumber: 0.1
+    listing-caption: Listing@
+
