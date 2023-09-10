@@ -50,3 +50,25 @@ debug: docker ## Start an interactive shell in the Antora site container
 	@echo "NGINX configuration files can be found under /etc/nginx"
 	@echo ""
 	@docker run --rm -it $(DOCKER_TAG) sh
+
+docker: ## Build the Antora site image
+	@echo -e "Building the Antora site image...\n"
+	@docker build --tag $(DOCKER_TAG) .
+	@echo ""
+
+test: ## Run vale on all documentation in the index
+	@echo "Running Vale on all documentation in tehe index..."
+	@git checkout-index --prefix="$(TEST_DIR)/" -a
+	@docker run --rm -v "$(TEST_DIR)":/docs jdkato/vale:v2.24.4 .
+
+install-hooks: ## Install Vale pre-commit hooks
+	@git config --local core.hooksPath .githooks/
+	@echo "Using .githooks/ as the local Git hooks directory."
+
+uninstall-hooks: ## Uninstall Vale pre-commit hooks
+	@git config --local --unset core.hooksPath
+	@echo "Resettting the loval Git hooks directory."
+
+clean: ## Clean up the site image and generated documentation
+	@[ -z "$$(docker images --quiet $(DOCKER_TAG))" ] || docker image rm $(DOCKER_TAG)
+	@rm -rf site
