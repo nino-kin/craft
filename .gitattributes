@@ -1,0 +1,5 @@
+# .gitattributes
+# https://github.com/alexkaratarakis/gitattributes
+# https://www.richie-bendall.ml/gitattributes-generator/
+* text=auto eol=lf
+*.zip binary
