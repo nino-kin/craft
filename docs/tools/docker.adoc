@@ -1,0 +1,106 @@
+= Docker
+
+== Best practices
+
+https://docs.docker.jp/develop/develop-images/dockerfile_best-practices.html
+
+Devcontainer(Remote Container)
+https://qiita.com/yoshii0110/items/c480e98cfe981e36dd56
+
+
+== Quick Start
+
+// https://youtu.be/B5tSZr_QqXw
+
+Install Docker
+
+[source, shell, subs="+attributes"]
+----
+docker --version
+----
+
+DockerHub 
+
+e.g. mysql
+
+[source, shell, subs="+attributes"]
+----
+$ docker pull mysql
+----
+
+[source, shell, subs="+attributes"]
+----
+$ docker images
+----
+
+[source, shell, subs="+attributes"]
+----
+$ docker run --name some-mysql -p 13306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+----
+
+-d: detached mode
+-p: <port # of local computer>:<port # of container>
+
+[source, shell, subs="+attributes"]
+----
+$ docker ps
+----
+
+[source, shell, subs="+attributes"]
+----
+$ docker exec -it some-mysql bash
+----
+
+In container
+
+[source, shell, subs="+attributes"]
+----
+bash-4.4# mysql -u root -p
+----
+
+Enter password you set before (e.g. `my-secret-pw`)
+
+Register one record into the table of MySQL in container.
+
+[source, shell, subs="+attributes"]
+----
+mysql>  CREATE DATABASE some_db
+mysql>  USE some_db
+mysql>  CREATE TABLE users (
+    -> id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    -> name VACHAR(50)
+    -> );
+mysql> INSERT INTO users(name) values("Python Newie");
+mysql> exit
+----
+
+[source, shell, subs="+attributes"]
+----
+$ docker ps
+$ docker stop some-mysql
+$ docker ps -a
+----
+
+[NOTE]
+====
+docker run: Generate & run containers from Docker image
+docker start: Restart containers once stopped
+====
+
+[source, shell, subs="+attributes"]
+----
+$ docker start 
+----
+
+=== Create Docker Image
+
+
+=== Crate Container
+
+=== Run Container
+
+=== Stop Container
+
+== Remove Container
+
+=== Remove Docker Image

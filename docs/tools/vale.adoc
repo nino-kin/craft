@@ -1,0 +1,5 @@
+= Vale
+
+== Installation
+
+https://vale.sh/docs/vale-cli/installation/

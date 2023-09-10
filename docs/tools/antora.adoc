@@ -1,0 +1,12 @@
+= Python
+
+
+https://antora.org/
+
+
+https://docs.antora.org/antora/latest/
+
+
+== Standard File and Directory Set
+https://docs.antora.org/antora/latest/standard-directories/
+

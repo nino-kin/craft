@@ -1,0 +1,143 @@
+= AsciiDoc syntax
+
+Section title
+
+== Level 1
+
+=== Level 2
+
+==== Level 3
+
+===== Level 4
+
+Line breaks
+
+
+https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/
+
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+_Admonitions_
+
+NOTE: note that foo is bar.
+
+TIP: this is a trivial tip.
+
+IMPORTANT: this is a important thing.
+
+WARNING: warning
+
+CAUTION: caution
+
+[source,python]
+----
+# foo.py
+class BananaMilkShake:
+    pass
+----
+
+_Unordered list_
+
+* Level 1 list item
+** Level 2 list item
+*** Level 3 list item
+**** Level 4 list item
+***** Level 5 list item
+****** etc.
+
+_Ordered list_
+
+. Step 1
+. Step 2
+.. Step 2a
+.. Step 2b
+. Step 3
+
+
+_Check list_
+
+* [*] checked
+* [x] also checked
+* [ ] not checked
+* normal list item
+
+
+_Description list_
+
+First term:: The description can be placed on the same line
+as the term.
+Second term::
+Description of the second term.
+The description can also start on its own line.
+
+_Question and answer list_
+
+[qanda]
+What is the answer?::
+This is the answer.
+
+Are cameras allowed?::
+Are backpacks allowed?::
+No.
+
+
+_Mixed_
+
+Operating Systems::
+  Linux:::
+    . Fedora
+      * Desktop
+    . Ubuntu
+      * Desktop
+      * Server
+  BSD:::
+    . FreeBSD
+    . NetBSD
+
+Cloud Providers::
+  PaaS:::
+    . OpenShift
+    . CloudBees
+  IaaS:::
+    . Amazon EC2
+    . Rackspace
+
+
+_Complex content in outline lists_
+
+* Every list item has at least one paragraph of content,
+  which may be wrapped, even using a hanging indent.
++
+Additional paragraphs or blocks are adjoined by putting
+a list continuation on a line adjacent to both blocks.
++
+list continuation:: a plus sign (`{plus}`) on a line by itself
+
+* A literal paragraph does not require a list continuation.
+
+ $ cd projects/my-book
+
+* AsciiDoc lists may contain any complex content.
++
+|===
+|Column 1, Header Row |Column 2, Header Row
+
+|Column 1, Row 1
+|Column 2, Row 1
+|===
+
+
+_Image_
+
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset,caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::macros:sunset.jpg[Sunset,200,100]
+
+image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+
+
+

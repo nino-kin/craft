@@ -1,0 +1,14 @@
+= Markdown
+
+> Markdown is a https://en.wikipedia.org/wiki/Lightweight_markup_language[lightweight markup language] for creating formatted text using a plain-text editor. John Gruber created Markdown in 2004 as a https://en.wikipedia.org/wiki/Markup_language[markup language] that is appealing to human readers in its source code form. Markdown is widely used in blogging, instant messaging, online forums, collaborative software, documentation pages, and readme files.
+>
+> The initial description of Markdown contained ambiguities and raised unanswered questions, causing implementations to both intentionally and accidentally diverge from the original version. This was addressed in 2014, when long-standing Markdown contributors released CommonMark, an unambiguous specification and test suite for Markdown.
+
+== Mermaid
+
+https://mermaid.js.org/intro/[Mermaid] is a JavaScript based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.
+
+Diagramming and documentation costs precious developer time and gets outdated quickly. But not having diagrams or docs ruins productivity and hurts organizational learning.
+Mermaid addresses this problem by enabling users to create easily modifiable diagrams, it can also be made part of production scripts (and other pieces of code).
+
+Here is https://mermaid.js.org/intro/n00b-syntaxReference.html[Mermaid's Syntax].

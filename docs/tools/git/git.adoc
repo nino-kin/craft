@@ -1,0 +1,37 @@
+= git
+
+== Naming Branches and Commits
+
+https://dev.to/varbsan/a-simplified-convention-for-naming-branches-and-commits-in-git-il4
+
+== gitignore
+
+
+
+== gitattributes
+https://github.com/alexkaratarakis/gitattributes
+https://www.richie-bendall.ml/gitattributes-generator/
+
+// TODO: .gitattributes
+
+改行コードの扱いを制御
+
+
+.gitattributesという名前のテキストファイルを作り、そこにtext属性に関する設定を書いてGitにコミットすれば、そのGitリポジトリを使う人全員で改行コードの扱いを統一できます。
+
+```txt
+*           text=auto
+*.txt       text
+*.vcproj    text eol=crlf
+*.sh        text eol=lf
+*.jpg       -text
+```
+
+
+URL:
+
+- https://zenn.dev/woo_noo/articles/5fcee179d890d1174add
+  - バイナリファイルの diff を表示する
+  - 改行文字の扱いを設定する
+  - Linguist の扱いを設定する
+

@@ -1,0 +1,114 @@
+= Bash
+
+bash is 
+
+== Techniques
+
+aaa
+
+=== Shebang
+
+Shebang option is as follows:
+
+Example:
+
+**No option**
+
+[source,bash]
+----
+#!/bin/bash
+
+ONE=1
+TWO=2
+
+echo "command: test ${ONE} -eq ${TWO}"
+test ${ONE} -eq ${TWO}
+echo status: $?
+
+echo "command: test ${ONE} -eq ${ONE}"
+test ${ONE} -eq ${ONE}
+echo status: $?
+----
+
+**`-e`**
+
+この状態で実行すると、0以外のステータスで終了しているため、以降のコマンドが実行されません。
+
+[source,bash]
+----
+$ /tmp/test.sh
+command: test 1 -eq 2
+----
+
+**`-x`**
+
+この状態で実行すると、実際に実行されたコマンドと変数の値が展開された状態で表示されていることがわかります。
+
+[source,bash]
+----
++ ONE=1
++ TWO=2
++ echo 'command: test 1 -eq 2'
+command: test 1 -eq 2
++ test 1 -eq 2
++ echo status: 1
+status: 1
++ echo 'command: test 1 -eq 1'
+command: test 1 -eq 1
++ test 1 -eq 1
++ echo status: 0
+status: 0
+----
+
+**`-v`**
+
+-x オプションとは異なり、変数名がそのまま表示されることがわかります。
+
+[source,bash]
+----
+#!/bin/sh -v
+
+ONE=1
+TWO=2
+
+echo "command: test ${ONE} -eq ${TWO}"
+command: test 1 -eq 2
+test ${ONE} -eq ${TWO}
+echo status: $?
+status: 1
+
+echo "command: test ${ONE} -eq ${ONE}"
+command: test 1 -eq 1
+test ${ONE} -eq ${ONE}
+echo status: $?
+status: 0
+----
+
+Multi option
+
+**`-ex`**
+
+0以外のステータスで終了するまでに、実際に実行されたコマンドと変数の値が展開された状態で表示されています。
+
+[source,bash]
+----
+$ ./test.sh
++ ONE=1
++ TWO=2
++ echo 'command: test 1 -eq 2'
+command: test 1 -eq 2
++ test 1 -eq 2
+----
+
+== Conclusion
+
+正常以外で終了した場合、それ以降のコマンドを実行したくない時に `-e` オプションを使うと良いと思います。 `-x` や `-v` オプションはシェルスクリプトのデバッグに利用できます。
+
+このオプションは1行目にも書くことができますが、 `set` コマンドを使って以下のように利用することもできます。
+
+[source,bash]
+----
+#!/bin/sh
+
+set -e
+----
