@@ -1,5 +1,6 @@
 site:
   title: Ninokin Docs
+  # url: https://docs.demo.com
   start_page: ninokin-policy::index.adoc
 
 content:
@@ -13,7 +14,9 @@ content:
       - naming
 ui:
   bundle:
+    # url: https://example.org/docs-ui/download/latest/ui-bundle.zip
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+#     url: ./ui-buldle.zip
     snapshot: true
 
 asciidoc:
