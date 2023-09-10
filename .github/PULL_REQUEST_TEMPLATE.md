@@ -25,3 +25,5 @@ _**Required**, once the entire feature is available: how is integration testing 
 ## Checkpoints for reviewers
 
 - _The PR mentions the issue when available (required for non-trivial pull requests)_
+- _The PR guidelines are followed (size is manageable, etc.), see <https://github.com>_
+- _The coding guidelines are followed (file and function comments, naming conventions etc.), see <https://github.com>_
