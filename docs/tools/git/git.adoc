@@ -9,6 +9,7 @@ https://dev.to/varbsan/a-simplified-convention-for-naming-branches-and-commits-i
 
 
 == gitattributes
+
 https://github.com/alexkaratarakis/gitattributes
 https://www.richie-bendall.ml/gitattributes-generator/
 
@@ -35,3 +36,22 @@ URL:
   - 改行文字の扱いを設定する
   - Linguist の扱いを設定する
 
+== Submodules
+
+=== Add submodules
+
+[source,console]
+----
+$ git submodule add <URL> <path>
+----
+
+=== Remove submodule
+
+If you remove your submodule, you should do the following steps:
+
+[source, console]
+----
+$ git submodule deinit -f <submodule name>
+$ git rm -f <submodule name>
+$ rm -rf .git/modules/<submodule name>
+----
