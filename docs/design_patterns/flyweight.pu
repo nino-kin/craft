@@ -1,0 +1,20 @@
+@startuml Flyweight pattern
+
+class Flyweight {
+  methodA()
+  methodB()
+}
+
+class FlyweightFactory {
+  pool
+  getFlyweight()
+}
+
+class Client {
+}
+
+FlyweightFactory o-up-> Flyweight : Creates >
+Client -up-> FlyweightFactory : Uses >
+Client --up--> Flyweight : Uses >
+
+@enduml

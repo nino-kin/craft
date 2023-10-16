@@ -1,0 +1,29 @@
+@startuml Decorator pattern
+
+abstract Component {
+  {abstract} method1()
+  {abstract} method2()
+  {abstract} method3()
+}
+
+class ConcreteComponent {
+  method1()
+  method2()
+  method3()
+}
+
+class Decorator {
+  component
+}
+
+class ConcreteDecorator {
+  method1()
+  method2()
+  method3()
+}
+
+ConcreteComponent -up-|> Component
+Decorator -up-|> Component
+Decorator o-up-> Component
+ConcreteDecorator -up|> Decorator
+@enduml

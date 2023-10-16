@@ -1,0 +1,30 @@
+@startuml Interpreter pattern
+
+class Client {
+}
+
+class Context {
+  getInfoToInterpret()
+}
+
+abstract AbstractExpression {
+  {abstract} interpret()
+}
+
+class TerminalExpression {
+  interpret()
+}
+
+class NonterminalExpression {
+  childExpressions
+  interpret()
+}
+
+Client -left-> Context : Creates >
+Client -right-> AbstractExpression : Uses >
+
+TerminalExpression -up-|> AbstractExpression
+NonterminalExpression -up-|> AbstractExpression
+NonterminalExpression o--> AbstractExpression
+
+@enduml

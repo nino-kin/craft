@@ -1,0 +1,35 @@
+@startuml State pattern
+
+class Context {
+  state
+  requestX()
+  requestY()
+  requestZ()
+}
+
+abstract State {
+  methodA()
+  methodB()
+  methodC()
+  methodD()
+}
+
+class ConcreteState1 {
+  methodA()
+  methodB()
+  methodC()
+  methodD()
+}
+
+class ConcreteState2 {
+  methodA()
+  methodB()
+  methodC()
+  methodD()
+}
+
+Context o-right-> State
+ConcreteState1 -up-|> State
+ConcreteState2 -up-|> State
+
+@enduml

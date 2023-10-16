@@ -1,0 +1,44 @@
+@startuml Mediator pattern
+
+abstract Mediator {
+  {abstract} createColleagues()
+  {abstract} colleagueChanged()
+}
+
+abstract Colleague {
+  mediator
+  {abstract} setMediator()
+  {abstract} controlColleague()
+}
+class ConcreteMediator {
+  concreteColleague1
+  concreteColleague2
+  concreteColleague3
+  createColleagues()
+  colleagueChanged()
+}
+
+class ConcreteColleague1 {
+  controlColleague()
+}
+
+class ConcreteColleague2 {
+  controlColleague()
+}
+
+class ConcreteColleague3 {
+  controlColleague()
+}
+
+ConcreteMediator -up-|> Mediator
+Colleague o-left-> Mediator
+
+ConcreteColleague1 -up-|> Colleague
+ConcreteColleague2 -up-|> Colleague
+ConcreteColleague3 -up-|> Colleague
+
+ConcreteMediator o-up-> ConcreteColleague1
+ConcreteMediator o-up-> ConcreteColleague2
+ConcreteMediator o-up-> ConcreteColleague3
+
+@enduml

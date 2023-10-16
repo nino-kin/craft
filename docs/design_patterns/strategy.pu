@@ -1,0 +1,24 @@
+@startuml Strategy pattern
+
+class Context {
+  strategy
+  contextMethod()
+}
+
+abstract Strategy {
+  {abstract} strategyMethod()
+}
+
+class ConcreteStrategy1 {
+  strategyMethod()
+}
+
+class ConcreteStrategy2 {
+  strategyMethod()
+}
+
+Context o-right-> Strategy
+ConcreteStrategy1 -up-|> Strategy
+ConcreteStrategy2 -up-|> Strategy
+
+@enduml

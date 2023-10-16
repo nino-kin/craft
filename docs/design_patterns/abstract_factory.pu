@@ -1,0 +1,63 @@
+@startuml Abstract Factory pattern
+
+package "factory" {
+  abstract AbstractProduct1 {
+    {abstract} executeA()
+    {abstract} executeB()
+  }
+
+  abstract AbstractProduct2 {
+    {abstract} doAlpha()
+    {abstract} doBeta()
+  }
+
+  abstract AbstractProduct3 {
+    {abstract} performOne()
+    {abstract} performTwo()
+  }
+
+  abstract AbstractFactory {
+    {abstract} createProduct1()
+    {abstract} createProduct2()
+    {abstract} createProduct3()
+  }
+
+  AbstractFactory -up-> AbstractProduct1 : Creates >
+  AbstractFactory -up-> AbstractProduct2 : Creates >
+  AbstractFactory -up-> AbstractProduct3 : Creates >
+}
+
+package "concretefactory" {
+  class ConcreteProduct1 {
+    executeA()
+    executeB()
+  }
+
+  class ConcreteProduct2 {
+    doAlpha()
+    doBeta()
+  }
+
+  class ConcreteProduct3 {
+    performOne()
+    performTwo()
+  }
+
+  class ConcreteFactory {
+    createProduct1()
+    createProduct2()
+    createProduct3()
+  }
+
+  ConcreteFactory -up-> ConcreteProduct1 : Creates >
+
+  ConcreteFactory -up-> ConcreteProduct2 : Creates >
+  ConcreteFactory -up-> ConcreteProduct3 : Creates >
+}
+
+ConcreteProduct1 -left-|> AbstractProduct1
+ConcreteProduct2 -left-|> AbstractProduct2
+ConcreteProduct3 -left-|> AbstractProduct3
+ConcreteFactory -left-|> AbstractFactory
+
+@enduml

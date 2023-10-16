@@ -1,0 +1,19 @@
+@startuml Momento pattern
+
+class Caretaker
+
+class Originator {
+  createMemento()
+  restoreMemento()
+}
+
+class Memento <<wide interface>> <<narrow interface>> {
+  ~getProtectedInfo
+  +getPublicInfo
+}
+
+Caretaker -right-> Originator : Requests >
+Caretaker o-down-> Memento
+Originator -down-> Memento : Creates >
+
+@enduml

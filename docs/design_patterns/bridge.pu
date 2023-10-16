@@ -1,0 +1,31 @@
+@startuml Bridge pattern
+class Abstraction {
+  impl
+  method1()
+  method2()
+  method3()
+}
+
+abstract Implementor {
+  {abstract} implMethodX()
+  {abstract} implMethodY()
+}
+
+class RefinedAbstraction {
+  refinedMethodA()
+  refinedMethodB()
+}
+
+class ConcreteImplementor {
+  implMethodX()
+  implMethodY()
+}
+
+RefinedAbstraction -up-|> Abstraction
+ConcreteImplementor -up-|> Implementor
+Abstraction o-right-> Implementor
+
+note left of Abstraction::method1
+  This method uses impl's method
+end note
+@enduml

@@ -1,0 +1,33 @@
+@startuml Composite pattern
+
+class Client {
+}
+
+abstract Component {
+  {abstract} method1()
+  {abstract} method2()
+  add()
+  remove()
+  getChild()
+}
+
+class Leaf {
+  method1()
+  method2()
+}
+
+class Composite {
+  children
+  method1()
+  method2()
+  add()
+  remove()
+  getChild()
+}
+
+Client -right-> Component : Uses >
+Leaf -up-|> Component
+Composite -up-|> Component
+Composite o-up-> Component
+
+@enduml

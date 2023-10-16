@@ -1,0 +1,26 @@
+@startuml Builder pattern
+
+class Director {
+  builder
+  construct()
+}
+
+class Builder {
+  buildPart()
+}
+
+class ConcreteBuilder {
+  buildPart()
+  getResult() : Product
+}
+
+class Product {
+}
+
+Director o-> Builder
+
+Builder <|- ConcreteBuilder
+
+ConcreteBuilder --> Product : Creates >
+
+@enduml

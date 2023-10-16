@@ -1,0 +1,21 @@
+@startuml Facade pattern
+
+class Client
+class Facade
+class ClassA
+class ClassB
+class ClassC
+class ClassD
+
+Client -down-> Facade : Uses >
+Facade -down-> ClassA
+Facade -down-> ClassB
+Facade -down-> ClassC
+Facade -down-> ClassD
+
+ClassA -down-> ClassB
+ClassB -right-> ClassC
+ClassC -left-> ClassB
+ClassD -down-> ClassC
+
+@enduml

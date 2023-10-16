@@ -1,0 +1,27 @@
+@startuml Command pattern
+
+class Command {
+  execute()
+}
+
+class Invoker {
+}
+
+class Receiver {
+  action()
+}
+
+class ConcreteCommand {
+  receiver
+  execute()
+}
+
+class Client {
+}
+
+Invoker o-left-> Command
+ConcreteCommand -up-|> Command
+ConcreteCommand o-left-> Receiver
+Client -up-> ConcreteCommand : Creates <
+
+@enduml

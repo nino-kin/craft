@@ -1,0 +1,27 @@
+@startuml Observer pattern
+
+abstract Subject {
+  observers
+  addObserver()
+  deleteObserver()
+  notifyObserver()
+  {abstract} getSubjectStatus()
+}
+
+abstract Observer {
+  {abstract} update()
+}
+
+class ConcreteSubject {
+  getSubjecdtStatus()
+}
+
+class ConcreteObserver {
+  update()
+}
+
+Subject o-right-> Observer : Notifies >
+ConcreteSubject -up-|> Subject
+ConcreteObserver -up-|> Observer
+
+@enduml

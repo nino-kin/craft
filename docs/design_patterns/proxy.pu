@@ -1,0 +1,29 @@
+@startuml Proxy pattern
+
+class Client
+
+abstract Subject {
+  request1()
+  request2()
+  request3()
+}
+
+class Proxy {
+  realSubject
+  request1()
+  request2()
+  request3()
+}
+
+class RealSubject {
+  request1()
+  request2()
+  request3()
+}
+
+Client o-right-> Subject : Uses >
+Proxy -up-|> Subject
+RealSubject -up-|> Subject
+Proxy o-right-> RealSubject : Uses >
+
+@enduml

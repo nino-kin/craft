@@ -1,0 +1,32 @@
+@startuml Visitor pattern
+
+abstract Visitor {
+  {abstract} visit(ConcreteElementA)
+  {abstract} visit(ConcreteElementB)
+}
+
+class ConcreteVisitor {
+  visit(ConcreteElementA)
+  visit(ConcreteElementB)
+}
+ConcreteVisitor -up-|> Visitor
+
+abstract Element {
+  {abstract} accept()
+}
+
+class ConcreteElementA {
+  accept()
+}
+
+class ConcreteElementB {
+  accept()
+}
+
+class ObjectStructure
+
+ConcreteElementA -up-|> Element
+ConcreteElementB -up-|> Element
+ObjectStructure o-left-> Element
+
+@enduml

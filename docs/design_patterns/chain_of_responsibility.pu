@@ -1,0 +1,20 @@
+@startuml Chain of Responsibility pattern
+
+class Client
+
+abstract Handler
+Handler : next
+Handler : {abstract} request()
+
+class ConcreteHandler1
+ConcreteHandler1 : request()
+
+class ConcreteHandler2
+ConcreteHandler2 : request()
+
+Client -right-> Handler : Request >
+Handler o-right-> Handler
+ConcreteHandler1 -up-|> Handler
+ConcreteHandler2 -up-|> Handler
+
+@enduml

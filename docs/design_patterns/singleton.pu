@@ -1,0 +1,7 @@
+@startuml Singleton pattern
+class Singleton {
+ {static} -singleton
+ -Singleton()
+ {static} +getInstance()
+}
+@enduml
